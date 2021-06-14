@@ -16,7 +16,7 @@ import java.util.Optional;
 @RequestMapping("/api/v1/logins")
 @RequiredArgsConstructor
 public class LoginController {
-    private final LoginService service = null;
+    private final LoginService service ;
 
     @GetMapping()
     public ResponseEntity get(){

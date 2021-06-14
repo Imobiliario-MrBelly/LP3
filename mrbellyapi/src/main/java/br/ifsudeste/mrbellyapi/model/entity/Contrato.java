@@ -23,7 +23,7 @@ public class Contrato {
 
 	//private Imovel imovel;
 	//private Locatario locatario;
-	private Date dataInicio;
-	private Date dataFim;
+	private String dataInicio;
+	private String dataFim;
 	private double valor;
 }

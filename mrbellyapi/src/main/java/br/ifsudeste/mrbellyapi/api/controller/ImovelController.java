@@ -16,7 +16,7 @@ import java.util.Optional;
 @RequestMapping("/api/v1/imoveis")
 @RequiredArgsConstructor
 public class ImovelController {
-    private final ImovelService service = null;
+    private final ImovelService service ;
 
     @GetMapping()
     public ResponseEntity get(){

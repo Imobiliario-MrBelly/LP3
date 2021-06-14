@@ -16,7 +16,7 @@ import java.util.Optional;
 @RequestMapping("/api/v1/contratos")
 @RequiredArgsConstructor
 public class ContratoController {
-    private final ContratoService service = null;
+    private final ContratoService service ;
 
     @GetMapping()
     public ResponseEntity get(){

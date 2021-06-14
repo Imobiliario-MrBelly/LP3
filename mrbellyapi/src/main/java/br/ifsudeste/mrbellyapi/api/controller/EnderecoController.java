@@ -16,7 +16,7 @@ import java.util.Optional;
 @RequestMapping("/api/v1/enderecos")
 @RequiredArgsConstructor
 public class EnderecoController {
-    private final EnderecoService service = null;
+    private final EnderecoService service;
 
     @GetMapping()
     public ResponseEntity get(){
