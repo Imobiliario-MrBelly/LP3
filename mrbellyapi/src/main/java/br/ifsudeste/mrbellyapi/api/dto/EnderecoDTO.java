@@ -10,14 +10,15 @@ import org.modelmapper.ModelMapper;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+public
 class EnderecoDTO {
     private Long id;
 
     private String rua;
     private String numero;
     private String cep;
-    private String cidade;
-    private String uf;
+//    private String cidade;
+//    private String uf;
 
    public static EnderecoDTO create (Endereco endereco){
 ModelMapper modelMapper = new ModelMapper();
