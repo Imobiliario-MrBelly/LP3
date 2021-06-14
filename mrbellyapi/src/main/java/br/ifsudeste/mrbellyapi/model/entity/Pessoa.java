@@ -3,7 +3,9 @@ package br.ifsudeste.mrbellyapi.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -26,7 +28,8 @@ public class Pessoa {
 	private String sobrenome;
 	private String rg;
 	private String cpf;
-	private String sexo;
-	private Date dataCadastro;
+	private char sexo;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dataNascimento;
 	private String telefone;
 }

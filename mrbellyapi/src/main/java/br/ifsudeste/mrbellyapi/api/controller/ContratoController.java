@@ -1,6 +1,5 @@
 package br.ifsudeste.mrbellyapi.api.controller;
 
-
 import br.ifsudeste.mrbellyapi.api.dto.ContratoDTO;
 import br.ifsudeste.mrbellyapi.service.ContratoService;
 import lombok.RequiredArgsConstructor;
@@ -16,17 +15,18 @@ import java.util.List;
 @RequestMapping("/api/v1/contratos")
 @RequiredArgsConstructor
 public class ContratoController {
-    private final ContratoService service ;
+	
+	private ContratoService service;
 
-    @GetMapping()
-    public ResponseEntity get(){
-        List<ContratoDTO> contratos = service.getContratos();
-        return ResponseEntity.ok(contratos);
-    }
+	@GetMapping()
+	public ResponseEntity get() {
+		List<ContratoDTO> contratos = service.getContratos();
+		return ResponseEntity.ok(contratos);
+	}
 
-    @GetMapping("/{id}")
-    public ResponseEntity get(@PathVariable("id") Long id){
-        ContratoDTO contrato = service.getContratoById(id);
-        return ResponseEntity.ok(contrato);
-    }
+	@GetMapping("/{id}")
+	public ResponseEntity get(@PathVariable("id") Long id) {
+		ContratoDTO contrato = service.getContratoById(id);
+		return ResponseEntity.ok(contrato);
+	}
 }

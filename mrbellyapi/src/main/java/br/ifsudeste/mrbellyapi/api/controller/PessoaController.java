@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/api/v1/pessoas")
 @RequiredArgsConstructor
 public class PessoaController {
-    private final PessoaService service ;
+    private PessoaService service;
 
     @GetMapping()
     public ResponseEntity get(){

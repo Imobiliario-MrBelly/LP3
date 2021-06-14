@@ -9,5 +9,4 @@ public class MrbellyapiApplication {
     public static void main(String[] args) {
         SpringApplication.run(MrbellyapiApplication.class, args);
     }
-
 }

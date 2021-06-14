@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/api/v1/imoveis")
 @RequiredArgsConstructor
 public class ImovelController {
-    private final ImovelService service ;
+    private ImovelService service;
 
     @GetMapping()
     public ResponseEntity get(){

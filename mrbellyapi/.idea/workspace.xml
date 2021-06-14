@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="897f0095-e215-4aa2-8dc1-8a5303b98226" name="Default Changelist" comment="" />
+    <list default="true" id="897f0095-e215-4aa2-8dc1-8a5303b98226" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_modelmapper_modelmapper_2_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Contrato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Contrato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Imovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Imovel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Locador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Locador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Locatario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Locatario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/ifsudeste/mrbellyapi/api/controller/PessoaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/ifsudeste/mrbellyapi/api/controller/PessoaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/ifsudeste/mrbellyapi/model/entity/Pessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/ifsudeste/mrbellyapi/model/entity/Pessoa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/ifsudeste/mrbellyapi/service/PessoaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/ifsudeste/mrbellyapi/service/PessoaService.class" afterDir="false" />
+    </list>
+    <list id="1f9d117c-09e9-4eaa-a65a-95fb8b1e658c" name="Changes by rennan" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Contrato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Contrato.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +38,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Contrato.java">
+      <ranges>
+        <range start1="2" end1="6" start2="2" end2="3" changelist="897f0095-e215-4aa2-8dc1-8a5303b98226" />
+        <range start1="10" end1="10" start2="7" end2="9" changelist="897f0095-e215-4aa2-8dc1-8a5303b98226" />
+        <range start1="11" end1="12" start2="10" end2="10" changelist="897f0095-e215-4aa2-8dc1-8a5303b98226" />
+        <range start1="17" end1="18" start2="15" end2="15" changelist="897f0095-e215-4aa2-8dc1-8a5303b98226" />
+        <range start1="22" end1="27" start2="19" end2="27" changelist="1f9d117c-09e9-4eaa-a65a-95fb8b1e658c" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectId" id="1tbWg3YwcrB7FrGnhB1kwYXw1km" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -35,17 +62,28 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.MrbellyapiApplication">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in mrbellyapi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mrbellyapi" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -57,6 +95,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in mrbellyapi" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -67,6 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1623038396308</updated>
       <workItem from="1623038400735" duration="7027000" />
+      <workItem from="1623697660935" duration="5207000" />
     </task>
     <servers />
   </component>
@@ -82,5 +126,8 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mrbellyapi$MrbellyapiApplication.ic" NAME="MrbellyapiApplication Coverage Results" MODIFIED="1623702773162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -1,6 +1,5 @@
 package br.ifsudeste.mrbellyapi.api.dto;
 
-
 import br.ifsudeste.mrbellyapi.model.entity.Login;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,13 +10,13 @@ import org.modelmapper.ModelMapper;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginDTO {
-    private Long id;
+	private Long id;
 
-    private String email;
-    private String senha;
+	private String email;
+	private String senha;
 
-   public static LoginDTO create (Login login){
-ModelMapper modelMapper = new ModelMapper();
-return modelMapper.map(login, LoginDTO.class);
-   }
+	public static LoginDTO create(Login login) {
+		ModelMapper modelMapper = new ModelMapper();
+		return modelMapper.map(login, LoginDTO.class);
+	}
 }

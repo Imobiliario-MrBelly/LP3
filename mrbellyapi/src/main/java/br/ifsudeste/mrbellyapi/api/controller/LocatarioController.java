@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/api/v1/locatarios")
 @RequiredArgsConstructor
 public class LocatarioController {
-    private final LocatarioService service = null;
+    private LocatarioService service;
 
     @GetMapping()
     public ResponseEntity get(){
