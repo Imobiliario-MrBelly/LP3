@@ -1,12 +1,11 @@
 package br.ifsudeste.mrbellyapi.api.dto;
 
+
 import br.ifsudeste.mrbellyapi.model.entity.Contrato;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
-
-import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -16,11 +15,12 @@ public class ContratoDTO {
 
     //private Imovel imovel;
     //private Locatario locatario;
-    private Date dataInicio;
-    private Date dataFim;
+//    private Date dataInicio;
+//    private Date dataFim;
     private double valor;
-    public static ContratoDTO create(Contrato contrato){
-        ModelMapper modelMapper = new ModelMapper();
-        return modelMapper.map(contrato,ContratoDTO.class);
-    }
+
+   public static  ContratoDTO create (Contrato contrato){
+ModelMapper modelMapper = new ModelMapper();
+return modelMapper.map(contrato,ContratoDTO.class);
+   }
 }
