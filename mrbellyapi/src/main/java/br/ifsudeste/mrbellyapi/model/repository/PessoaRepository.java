@@ -1,8 +1,8 @@
 package br.ifsudeste.mrbellyapi.model.repository;
 
-import br.ifsudeste.mrbellyapi.model.entity.Pessoa;
 import org.springframework.data.jpa.repository.JpaRepository;
+import br.ifsudeste.mrbellyapi.model.entity.Pessoa;
 
-public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
+public interface PessoaRepository extends JpaRepository<Pessoa, Long>{
 
 }

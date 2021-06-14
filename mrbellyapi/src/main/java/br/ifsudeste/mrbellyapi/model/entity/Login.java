@@ -14,14 +14,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Endereco {
+public class Login {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 	
-	private String rua;
-    private String numero;
-    private String cep;
-    private String cidade;
-    private String uf;
+	private String email;
+    private String senha;
 }

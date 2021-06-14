@@ -1,7 +1,7 @@
 package br.ifsudeste.mrbellyapi.api.controller;
 
-import br.ifsudeste.mrbellyapi.model.entity.Endereco;
-import br.ifsudeste.mrbellyapi.service.EnderecoService;
+import br.ifsudeste.mrbellyapi.model.entity.Login;
+import br.ifsudeste.mrbellyapi.service.LoginService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,20 +13,20 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/enderecos")
+@RequestMapping("/api/v1/logins")
 @RequiredArgsConstructor
-public class EnderecoController {
-    private final EnderecoService service = null;
+public class LoginController {
+    private final LoginService service = null;
 
     @GetMapping()
     public ResponseEntity get(){
-        List<Endereco> enderecos = service.getEnderecos();
-        return ResponseEntity.ok(enderecos);
+        List<Login> logins = service.getLogins();
+        return ResponseEntity.ok(logins);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id){
-        Optional<Endereco> endereco = service.getEnderecoById(id);
-        return ResponseEntity.ok(endereco);
+        Optional<Login> login = service.getLoginById(id);
+        return ResponseEntity.ok(login);
     }
 }

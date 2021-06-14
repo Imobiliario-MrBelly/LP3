@@ -9,19 +9,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Endereco {
+public class Contrato {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	private String rua;
-    private String numero;
-    private String cep;
-    private String cidade;
-    private String uf;
+
+	//private Imovel imovel;
+	//private Locatario locatario;
+	private Date dataInicio;
+	private Date dataFim;
+	private double valor;
 }

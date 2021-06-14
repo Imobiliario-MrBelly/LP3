@@ -1,7 +1,7 @@
 package br.ifsudeste.mrbellyapi.api.controller;
 
-import br.ifsudeste.mrbellyapi.model.entity.Endereco;
-import br.ifsudeste.mrbellyapi.service.EnderecoService;
+import br.ifsudeste.mrbellyapi.model.entity.Contrato;
+import br.ifsudeste.mrbellyapi.service.ContratoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,20 +13,20 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/enderecos")
+@RequestMapping("/api/v1/contratos")
 @RequiredArgsConstructor
-public class EnderecoController {
-    private final EnderecoService service = null;
+public class ContratoController {
+    private final ContratoService service = null;
 
     @GetMapping()
     public ResponseEntity get(){
-        List<Endereco> enderecos = service.getEnderecos();
-        return ResponseEntity.ok(enderecos);
+        List<Contrato> contratos = service.getContratos();
+        return ResponseEntity.ok(contratos);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id){
-        Optional<Endereco> endereco = service.getEnderecoById(id);
-        return ResponseEntity.ok(endereco);
+        Optional<Contrato> contrato = service.getContratoById(id);
+        return ResponseEntity.ok(contrato);
     }
 }

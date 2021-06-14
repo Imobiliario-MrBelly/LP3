@@ -16,7 +16,7 @@ import java.util.Optional;
 @RequestMapping("/api/v1/pessoas")
 @RequiredArgsConstructor
 public class PessoaController {
-    private final PessoaService service;
+    private final PessoaService service = null;
 
     @GetMapping()
     public ResponseEntity get(){

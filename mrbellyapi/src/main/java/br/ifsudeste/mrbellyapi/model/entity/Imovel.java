@@ -1,32 +1,29 @@
 package br.ifsudeste.mrbellyapi.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Pessoa {
-
+public class Imovel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	private String nome;
-	private String sobrenome;
-	private String rg;
-	private String cpf;
-	private String sexo;
-	private Date dataCadastro;
-	private String telefone;
+	
+	//private Endereco endereco;
+    private double area;
+    private String descricao;
+    private double condominio;
+    private double iptu;
+    private int garagem;
+    //private Locador locador;
 }
