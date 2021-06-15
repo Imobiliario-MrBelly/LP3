@@ -1,6 +1,7 @@
 package br.ifsudeste.mrbellyapi.api.dto;
 
 
+import br.ifsudeste.mrbellyapi.model.entity.Endereco;
 import br.ifsudeste.mrbellyapi.model.entity.Imovel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +14,7 @@ import org.modelmapper.ModelMapper;
 public class ImovelDTO {
     private Long id;
 
-    //private Endereco endereco;
+    private Endereco endereco;
     private double area;
     private String descricao;
     private double condominio;

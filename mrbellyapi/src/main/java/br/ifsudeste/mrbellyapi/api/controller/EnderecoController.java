@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/api/v1/enderecos")
 @RequiredArgsConstructor
 public class EnderecoController {
-    private EnderecoService service;
+    private final EnderecoService service;
 
     @GetMapping()
     public ResponseEntity get(){

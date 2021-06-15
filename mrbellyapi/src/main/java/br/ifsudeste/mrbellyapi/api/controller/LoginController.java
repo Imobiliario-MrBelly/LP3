@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/api/v1/logins")
 @RequiredArgsConstructor
 public class LoginController {
-    private LoginService service;
+    private final LoginService service;
 
     @GetMapping()
     public ResponseEntity get(){

@@ -1,11 +1,12 @@
 package br.ifsudeste.mrbellyapi.model.entity;
 
-import javax.persistence.*;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
 
@@ -22,8 +23,10 @@ public class Contrato {
 	@ManyToOne
 	private Locatario locatario;
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataInicio;
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataFim;
 	private double valor;
 }

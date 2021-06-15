@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ContratoController {
 	
-	private ContratoService service;
+	private final ContratoService service;
 
 	@GetMapping()
 	public ResponseEntity get() {
