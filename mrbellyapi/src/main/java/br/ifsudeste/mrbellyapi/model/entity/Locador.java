@@ -1,25 +1,21 @@
 package br.ifsudeste.mrbellyapi.model.entity;
 
-import javax.persistence.*;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Locador {
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Locador extends Pessoa{
 
-	@OneToOne
-    private Pessoa pessoa;
+
     @OneToOne
     private Endereco endereco;
-    @OneToOne
-    private Login login;
+
 }

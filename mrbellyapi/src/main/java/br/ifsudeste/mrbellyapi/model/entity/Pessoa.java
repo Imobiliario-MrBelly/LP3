@@ -6,23 +6,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class Pessoa {
+@MappedSuperclass
+public abstract  class Pessoa {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	private String email;
+	private String senha;
 	private String nome;
 	private String sobrenome;
 	private String rg;

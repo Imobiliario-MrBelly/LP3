@@ -1,6 +1,7 @@
 package br.ifsudeste.mrbellyapi.api.dto;
 
 
+import br.ifsudeste.mrbellyapi.model.entity.Endereco;
 import br.ifsudeste.mrbellyapi.model.entity.Locador;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,10 +13,10 @@ import org.modelmapper.ModelMapper;
 @AllArgsConstructor
 public class LocadorDTO {
     private Long id;
+    private String nome;
 
-    //private Pessoa pessoa;
-    //private Endereco endereco;
-    //private Login login;
+    private Endereco endereco;
+
 
    public static LocadorDTO create (Locador locador){
 ModelMapper modelMapper = new ModelMapper();

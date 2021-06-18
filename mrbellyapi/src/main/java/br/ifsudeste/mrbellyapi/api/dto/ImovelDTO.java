@@ -3,6 +3,7 @@ package br.ifsudeste.mrbellyapi.api.dto;
 
 import br.ifsudeste.mrbellyapi.model.entity.Endereco;
 import br.ifsudeste.mrbellyapi.model.entity.Imovel;
+import br.ifsudeste.mrbellyapi.model.entity.Locador;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,7 @@ public class ImovelDTO {
     private double condominio;
     private double iptu;
     private int garagem;
-    //private Locador locador;
+    private Locador locador;
 
    public static ImovelDTO create (Imovel imovel){
 ModelMapper modelMapper = new ModelMapper();
