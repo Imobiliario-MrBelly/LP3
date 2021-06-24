@@ -30,7 +30,7 @@ public class LocadorController {
     public ResponseEntity get(@PathVariable("id") Long id){
         Optional<Locador> locador = service.getLocadorById(id);
         if (!locador.isPresent()){
-            return new ResponseEntity("imovel nao encontrado", HttpStatus.NOT_FOUND);
+            return new ResponseEntity("Locador nao encontrado", HttpStatus.NOT_FOUND);
         }
         return ResponseEntity.ok(locador.map(LocadorDTO::create));
     }
