@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4ff03f1-4bd0-4af5-b023-9aeaf2572217" name="Changes" comment="">
+    <list default="true" id="e4ff03f1-4bd0-4af5-b023-9aeaf2572217" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Locatario.java" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Locatario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Locatario.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Locatario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/mrbellyapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/mrbellyapi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +21,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1twknw2ahHGj2Oije5aoaTSsPj2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -34,6 +44,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="ml.local.models.training.notification.expired" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -43,13 +54,41 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="br.ifsudeste.mrbellyapi.api.dto" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.MrbellyapiApplication">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MrbellyapiApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ifsudeste.mrbellyapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ifsudeste.mrbellyapi" />
+      <option name="MAIN_CLASS_NAME" value="br.ifsudeste.mrbellyapi.MrbellyapiApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MrbellyapiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="mrbellyapi" />
       <extension name="coverage">
@@ -66,6 +105,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.MrbellyapiApplication" />
+        <item itemvalue="JUnit.MrbellyapiApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -83,6 +123,10 @@
       <workItem from="1623695973998" duration="3454000" />
       <workItem from="1623714405843" duration="3023000" />
       <workItem from="1624288405645" duration="2152000" />
+      <workItem from="1624398547036" duration="130000" />
+      <workItem from="1624398712808" duration="1013000" />
+      <workItem from="1624399772382" duration="272000" />
+      <workItem from="1624400099679" duration="2155000" />
     </task>
     <servers />
   </component>
