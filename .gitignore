@@ -1,2 +1,7 @@
-
-mrbellyapi/src/main/resources/application.properties
+.idea/
+.classpath
+.project
+.settings/
+target/
+HELP.md
+mrbellyapi.iml
