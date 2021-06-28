@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e4ff03f1-4bd0-4af5-b023-9aeaf2572217" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/api/controller/LocadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/api/controller/LocadorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/api/dto/ContratoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/api/dto/ContratoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/api/dto/LocadorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/api/dto/LocadorDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/api/dto/LocatarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/api/dto/LocatarioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Contrato.java" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Contrato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Locador.java" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Locador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Locatario.java" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Locatario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/model/entity/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/MrbellyapiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/MrbellyapiApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/IndexResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/IndexResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/ContratoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/ContratoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/EnderecoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/EnderecoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/ImovelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/ImovelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/LocadorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/LocadorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/LocatarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/LocatarioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/ContratoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/ContratoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/EnderecoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/EnderecoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/LocadorDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/LocadorDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/LocatarioDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/LocatarioDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Contrato.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Contrato.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Endereco.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Endereco.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Locador.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Locador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Locatario.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Locatario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Pessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Pessoa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/ContratoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/ContratoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/EnderecoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/EnderecoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/ImovelRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/ImovelRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/LocatarioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/LocatarioRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/ContratoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/ContratoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/EnderecoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/EnderecoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/ImovelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/ImovelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/LocadorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/LocadorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/LocatarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/LocatarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/test-classes/br/ifsudeste/mrbellyapi/MrbellyapiApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/test-classes/br/ifsudeste/mrbellyapi/MrbellyapiApplicationTests.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1twknw2ahHGj2Oije5aoaTSsPj2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="ml.local.models.training.notification.expired" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.ifsudeste.mrbellyapi.api.dto" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MrbellyapiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="mrbellyapi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ifsudeste.mrbellyapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.ifsudeste.mrbellyapi.MrbellyapiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.MrbellyapiApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4ff03f1-4bd0-4af5-b023-9aeaf2572217" name="Changes" comment="" />
+      <created>1623687712774</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623687712774</updated>
+      <workItem from="1623687715609" duration="3583000" />
+      <workItem from="1623691421487" duration="401000" />
+      <workItem from="1623691851618" duration="4023000" />
+      <workItem from="1623695973998" duration="3454000" />
+      <workItem from="1623714405843" duration="3023000" />
+      <workItem from="1624288405645" duration="2152000" />
+      <workItem from="1624358705332" duration="1156000" />
+      <workItem from="1624492911200" duration="25000" />
+      <workItem from="1624548303798" duration="3383000" />
+      <workItem from="1624828882590" duration="5268000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
