@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -14,8 +14,13 @@ import javax.persistence.OneToOne;
 
 public class Locador extends Pessoa{
 
+    @OneToOne
+    private Login login;
 
     @OneToOne
     private Endereco endereco;
 
+    @OneToMany
+    @JoinTable(name="imoveis_locador",joinColumns=@JoinColumn(name="locador_id"),inverseJoinColumns = @JoinColumn(name="imovel_id"))
+    private List<Imovel> imoveis;
 }

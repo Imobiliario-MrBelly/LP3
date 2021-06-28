@@ -20,8 +20,10 @@ public class Contrato {
 	private Long id;
 	@OneToOne
 	private Imovel imovel;
-	@ManyToOne
+	@OneToOne
 	private Locatario locatario;
+	@OneToOne
+	private Fiador fiador;
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataInicio;

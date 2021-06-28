@@ -1,5 +1,6 @@
 package br.ifsudeste.mrbellyapi.api.controller;
 
+import br.ifsudeste.mrbellyapi.api.dto.ImovelDTO;
 import br.ifsudeste.mrbellyapi.api.dto.LocadorDTO;
 import br.ifsudeste.mrbellyapi.model.entity.Locador;
 import br.ifsudeste.mrbellyapi.service.LocadorService;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1/locadores")
@@ -33,5 +35,13 @@ public class LocadorController {
             return new ResponseEntity("Locador nao encontrado", HttpStatus.NOT_FOUND);
         }
         return ResponseEntity.ok(locador.map(LocadorDTO::create));
+    }
+    @GetMapping("/{id}/imoveis")
+    public ResponseEntity getImoveis(@PathVariable("id") Long id){
+        Optional<Locador> locador = service.getLocadorById(id);
+        if (!locador.isPresent()){
+            return new ResponseEntity("Locador nao encontrado", HttpStatus.NOT_FOUND);
+        }
+        return ResponseEntity.ok(locador.get().getImoveis().stream().map(ImovelDTO::create).collect(Collectors.toList()));
     }
 }

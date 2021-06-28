@@ -1,6 +1,7 @@
 package br.ifsudeste.mrbellyapi.api.dto;
 
 import br.ifsudeste.mrbellyapi.model.entity.Contrato;
+import br.ifsudeste.mrbellyapi.model.entity.Fiador;
 import br.ifsudeste.mrbellyapi.model.entity.Imovel;
 import br.ifsudeste.mrbellyapi.model.entity.Locatario;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -19,6 +20,7 @@ public class ContratoDTO {
 
 	 private Imovel imovel;
 	 private Locatario locatario;
+	 private Fiador fiador;
 	@JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataInicio;
 	@JsonFormat(pattern = "dd/MM/yyyy")
