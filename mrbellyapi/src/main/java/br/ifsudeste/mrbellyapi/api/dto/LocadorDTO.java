@@ -16,13 +16,13 @@ public class LocadorDTO {
     private Long id;
     private String nome;
 private Long idEndereco;
-private Long idLogin;
+//private Long idLogin;
 
 
    public static LocadorDTO create (Locador locador){
 ModelMapper modelMapper = new ModelMapper();
 LocadorDTO dto =modelMapper.map(locador,LocadorDTO.class);
-assert dto.getIdLogin().equals(locador.getId());
+//assert dto.getIdLogin().equals(locador.getId());
 assert dto.getIdEndereco().equals(locador.getEndereco().getId());
 return dto;
    }

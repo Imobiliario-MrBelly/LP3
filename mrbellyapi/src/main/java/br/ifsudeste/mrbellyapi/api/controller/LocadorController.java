@@ -22,6 +22,8 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class LocadorController {
     private final LocadorService service;
+    private final EnderecoService enderecoService;
+
 
     @GetMapping()
     public ResponseEntity get(){
@@ -59,16 +61,18 @@ public class LocadorController {
     private Locador converter(LocadorDTO dto) {
         ModelMapper modelMapper = new ModelMapper();
         Locador locador = modelMapper.map(dto, Locador.class);
-        if (dto.getIdEndereco() != null||dto.getIdLogin() != null) {
-            Optional<Endereco> endereco = EnderecoService.getCursoById(dto.getIdCurso());
-            if (!curso.isPresent()) {
-                aluno.setCurso(null);
+        if (dto.getIdEndereco() != null) {
+            Optional<Endereco> endereco = enderecoService.getEnderecoById(dto.getIdEndereco());
+            if (!endereco.isPresent()) {
+               locador.setEndereco(null);
+               locador.setLogin(null);
             } else {
-                aluno.setCurso(curso.get());
+                locador.setEndereco(endereco.get());
+                locador.setLogin(null);
             }
         }
-        return aluno;
+        return locador;
     }
-    }
+
 
 }
