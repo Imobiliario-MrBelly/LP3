@@ -2,15 +2,16 @@ package br.ifsudeste.mrbellyapi.api.controller;
 
 import br.ifsudeste.mrbellyapi.api.dto.ImovelDTO;
 import br.ifsudeste.mrbellyapi.api.dto.LocadorDTO;
+import br.ifsudeste.mrbellyapi.api.exception.RegradeNegocioException;
+import br.ifsudeste.mrbellyapi.model.entity.Endereco;
 import br.ifsudeste.mrbellyapi.model.entity.Locador;
+import br.ifsudeste.mrbellyapi.service.EnderecoService;
 import br.ifsudeste.mrbellyapi.service.LocadorService;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -44,4 +45,30 @@ public class LocadorController {
         }
         return ResponseEntity.ok(locador.get().getImoveis().stream().map(ImovelDTO::create).collect(Collectors.toList()));
     }
+    @PostMapping()
+        public ResponseEntity post(LocadorDTO dto ){
+            try {
+                Locador locador = converter(dto);
+                locador=service.salvar(locador);
+                return new ResponseEntity(locador, HttpStatus.CREATED);
+            }catch(RegradeNegocioException e ){
+                return ResponseEntity.badRequest().body(e.getMessage());
+            }
+        }
+
+    private Locador converter(LocadorDTO dto) {
+        ModelMapper modelMapper = new ModelMapper();
+        Locador locador = modelMapper.map(dto, Locador.class);
+        if (dto.getIdEndereco() != null||dto.getIdLogin() != null) {
+            Optional<Endereco> endereco = EnderecoService.getCursoById(dto.getIdCurso());
+            if (!curso.isPresent()) {
+                aluno.setCurso(null);
+            } else {
+                aluno.setCurso(curso.get());
+            }
+        }
+        return aluno;
+    }
+    }
+
 }
