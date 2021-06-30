@@ -11,16 +11,15 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+public class Locador extends Pessoa {
 
-public class Locador extends Pessoa{
+	@OneToOne
+	private Login login;
 
-    @OneToOne
-    private Login login;
+	@OneToOne
+	private Endereco endereco;
 
-    @OneToOne
-    private Endereco endereco;
-
-    @OneToMany
-    @JoinTable(name="imoveis_locador",joinColumns=@JoinColumn(name="locador_id"),inverseJoinColumns = @JoinColumn(name="imovel_id"))
-    private List<Imovel> imoveis;
+	@OneToMany
+	@JoinTable(name = "imoveis_locador", joinColumns = @JoinColumn(name = "locador_id"), inverseJoinColumns = @JoinColumn(name = "imovel_id"))
+	private List<Imovel> imoveis;
 }

@@ -1,6 +1,6 @@
 package br.ifsudeste.mrbellyapi.service;
 
-import br.ifsudeste.mrbellyapi.api.exception.RegradeNegocioException;
+import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
 import br.ifsudeste.mrbellyapi.model.entity.Contrato;
 import br.ifsudeste.mrbellyapi.model.entity.Imovel;
 import br.ifsudeste.mrbellyapi.model.repository.ImovelRepository;
@@ -36,11 +36,11 @@ public class ImovelService {
     public void validar(Imovel imovel) {
 
         if (imovel.getLocador() == null) {
-            throw new RegradeNegocioException("Locador inválido");
+            throw new RegraDeNegocioException("Locador inválido");
         }
         
         if (imovel.getEndereco() == null) {
-            throw new RegradeNegocioException("Endereço inválido");
+            throw new RegraDeNegocioException("Endereço inválido");
         }
     }
 }

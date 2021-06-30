@@ -1,6 +1,6 @@
 package br.ifsudeste.mrbellyapi.service;
 
-import br.ifsudeste.mrbellyapi.api.exception.RegradeNegocioException;
+import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
 import br.ifsudeste.mrbellyapi.model.entity.Locador;
 import br.ifsudeste.mrbellyapi.model.repository.LocadorRepository;
 import lombok.SneakyThrows;
@@ -12,30 +12,31 @@ import java.util.Optional;
 
 @Service
 public class LocadorService {
-    private LocadorRepository repository;
+	private LocadorRepository repository;
 
-    public LocadorService(LocadorRepository repository){
-        this.repository = repository;
-    }
+	public LocadorService(LocadorRepository repository) {
+		this.repository = repository;
+	}
 
-    public List<Locador> getLocadores(){
+	public List<Locador> getLocadores() {
 
-        return repository.findAll();
-    }
+		return repository.findAll();
+	}
 
-    public Optional<Locador> getLocadorById(Long id){
-       return repository.findById(id);}
-    @Transactional
-    public Locador salvar(Locador locador) {
-        validar(locador);
-        return  repository.save(locador);
-    }
+	public Optional<Locador> getLocadorById(Long id) {
+		return repository.findById(id);
+	}
 
+	@Transactional
+	public Locador salvar(Locador locador) {
+		validar(locador);
+		return repository.save(locador);
+	}
 
-    private void validar(Locador locador)  {
-        if (locador.getNome()==null||locador.getNome().trim().equals("")){
-            throw new RegradeNegocioException("nome invalido");
-        }
-    }
+	private void validar(Locador locador) {
+		if (locador.getNome() == null || locador.getNome().trim().equals("")) {
+			throw new RegraDeNegocioException("Nome inválido");
+		}
+	}
 
 }

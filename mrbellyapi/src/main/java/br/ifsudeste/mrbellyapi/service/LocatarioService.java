@@ -1,6 +1,6 @@
 package br.ifsudeste.mrbellyapi.service;
 
-import br.ifsudeste.mrbellyapi.api.exception.RegradeNegocioException;
+import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
 import br.ifsudeste.mrbellyapi.model.entity.Imovel;
 import br.ifsudeste.mrbellyapi.model.entity.Locatario;
 import br.ifsudeste.mrbellyapi.model.repository.LocatarioRepository;
@@ -36,11 +36,11 @@ public class LocatarioService {
     public void validar(Locatario locatario) {
 
     	if (locatario.getNome()==null||locatario.getNome().trim().equals("")){
-            throw new RegradeNegocioException("Nome inválido");
+            throw new RegraDeNegocioException("Nome inválido");
         }
     	
         if (locatario.getLogin() == null) {
-            throw new RegradeNegocioException("Login inválido");
+            throw new RegraDeNegocioException("Login inválido");
         }
         
         

@@ -1,6 +1,6 @@
 package br.ifsudeste.mrbellyapi.service;
 
-import br.ifsudeste.mrbellyapi.api.exception.RegradeNegocioException;
+import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
 import br.ifsudeste.mrbellyapi.model.entity.Contrato;
 import br.ifsudeste.mrbellyapi.model.repository.ContratoRepository;
 import org.springframework.stereotype.Service;
@@ -35,11 +35,11 @@ public class ContratoService {
     public void validar(Contrato contrato) {
 
         if (contrato.getLocatario() == null) {
-            throw new RegradeNegocioException("Locatário inválido");
+            throw new RegraDeNegocioException("Locatário inválido");
         }
         
         if (contrato.getImovel() == null) {
-            throw new RegradeNegocioException("Imovél inválido");
+            throw new RegraDeNegocioException("Imovél inválido");
         }
     }
 }

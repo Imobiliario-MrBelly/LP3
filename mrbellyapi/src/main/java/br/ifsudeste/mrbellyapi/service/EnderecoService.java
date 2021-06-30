@@ -1,6 +1,6 @@
 package br.ifsudeste.mrbellyapi.service;
 
-import br.ifsudeste.mrbellyapi.api.exception.RegradeNegocioException;
+import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
 import br.ifsudeste.mrbellyapi.model.entity.Contrato;
 import br.ifsudeste.mrbellyapi.model.entity.Endereco;
 import br.ifsudeste.mrbellyapi.model.repository.EnderecoRepository;
@@ -36,23 +36,23 @@ public class EnderecoService {
 	public void validar(Endereco endereco) {
 
 		if (endereco.getRua() == null || endereco.getRua().trim().equals("")) {
-			throw new RegradeNegocioException("Endereço inválido");
+			throw new RegraDeNegocioException("Endereço inválido");
 		}
 		
 		if (endereco.getNumero() == null || endereco.getNumero().trim().equals("")) {
-			throw new RegradeNegocioException("Número inválido");
+			throw new RegraDeNegocioException("Número inválido");
 		}
 		
 		if (endereco.getCep() == null || endereco.getCep().trim().equals("")) {
-			throw new RegradeNegocioException("CEP inválido");
+			throw new RegraDeNegocioException("CEP inválido");
 		}
 		
 		if (endereco.getCidade() == null || endereco.getCidade().trim().equals("")) {
-			throw new RegradeNegocioException("Cidade inválida");
+			throw new RegraDeNegocioException("Cidade inválida");
 		}
 		
 		if (endereco.getUf() == null || endereco.getUf().trim().equals("")) {
-			throw new RegradeNegocioException("Unidade federativa (UF) inválida");
+			throw new RegraDeNegocioException("Unidade federativa (UF) inválida");
 		}
 	}
 }

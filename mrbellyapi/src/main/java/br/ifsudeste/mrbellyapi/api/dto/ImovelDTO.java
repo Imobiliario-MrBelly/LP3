@@ -1,9 +1,6 @@
 package br.ifsudeste.mrbellyapi.api.dto;
 
-
-import br.ifsudeste.mrbellyapi.model.entity.Endereco;
 import br.ifsudeste.mrbellyapi.model.entity.Imovel;
-import br.ifsudeste.mrbellyapi.model.entity.Locador;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,18 +10,21 @@ import org.modelmapper.ModelMapper;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ImovelDTO {
-    private Long id;
+	
+	private Long id;
+	private double area;
+	private String descricao;
+	private double condominio;
+	private double iptu;
+	private int garagem;
+	private Long idLocador;
+	private Long idEndereco;
 
-    private Endereco endereco;
-    private double area;
-    private String descricao;
-    private double condominio;
-    private double iptu;
-    private int garagem;
-    private Locador locador;
-
-   public static ImovelDTO create (Imovel imovel){
-ModelMapper modelMapper = new ModelMapper();
-return modelMapper.map(imovel, ImovelDTO.class);
-   }
+	public static ImovelDTO create(Imovel imovel) {
+		ModelMapper modelMapper = new ModelMapper();
+		ImovelDTO dto = modelMapper.map(imovel, ImovelDTO.class);
+		assert dto.getIdLocador().equals(imovel.getLocador().getId());
+		assert dto.getIdEndereco().equals(imovel.getEndereco().getId());
+		return dto;
+	}
 }

@@ -24,7 +24,7 @@ public abstract  class Pessoa {
 	private String sobrenome;
 	private String rg;
 	private String cpf;
-	private char sexo;
+	private String sexo;
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataNascimento;

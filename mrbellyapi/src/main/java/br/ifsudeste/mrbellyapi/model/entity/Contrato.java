@@ -18,17 +18,23 @@ public class Contrato {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@OneToOne
 	private Imovel imovel;
+	
 	@OneToOne
 	private Locatario locatario;
+	
 	@OneToOne
 	private Fiador fiador;
+	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataInicio;
+	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataFim;
+	
 	private double valor;
 }
