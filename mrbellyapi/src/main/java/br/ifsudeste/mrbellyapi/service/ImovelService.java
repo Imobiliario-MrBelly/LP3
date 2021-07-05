@@ -1,15 +1,14 @@
 package br.ifsudeste.mrbellyapi.service;
 
 import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
-import br.ifsudeste.mrbellyapi.model.entity.Contrato;
 import br.ifsudeste.mrbellyapi.model.entity.Imovel;
+import br.ifsudeste.mrbellyapi.model.entity.Locador;
 import br.ifsudeste.mrbellyapi.model.repository.ImovelRepository;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
-
-import javax.transaction.Transactional;
 
 @Service
 public class ImovelService {
@@ -26,7 +25,11 @@ public class ImovelService {
     public Optional<Imovel> getImovelById(Long id){
        return repository.findById(id);
     }
-    
+
+    public List<Imovel> getImovelByLocador(Optional<Locador> locador){
+        return  repository.findByLocador(locador);
+    }
+
     @Transactional
     public Imovel salvar(Imovel imovel) {
         validar(imovel);

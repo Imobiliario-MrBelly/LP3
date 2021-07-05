@@ -4,9 +4,11 @@ import br.ifsudeste.mrbellyapi.api.dto.ImovelDTO;
 import br.ifsudeste.mrbellyapi.api.dto.LocadorDTO;
 import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
 import br.ifsudeste.mrbellyapi.model.entity.Endereco;
+import br.ifsudeste.mrbellyapi.model.entity.Imovel;
 import br.ifsudeste.mrbellyapi.model.entity.Locador;
 import br.ifsudeste.mrbellyapi.model.entity.Login;
 import br.ifsudeste.mrbellyapi.service.EnderecoService;
+import br.ifsudeste.mrbellyapi.service.ImovelService;
 import br.ifsudeste.mrbellyapi.service.LocadorService;
 import br.ifsudeste.mrbellyapi.service.LoginService;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +28,7 @@ public class LocadorController {
 	private final LocadorService service;
 	private final EnderecoService enderecoService;
 	private final LoginService loginService;
+	private final ImovelService imovelService;
 
 	@GetMapping()
 	public ResponseEntity get() {
@@ -48,8 +51,9 @@ public class LocadorController {
 		if (!locador.isPresent()) {
 			return new ResponseEntity("Locador não encontrado", HttpStatus.NOT_FOUND);
 		}
+		List<Imovel> imoveis = imovelService.getImovelByLocador(locador);
 		return ResponseEntity
-				.ok(locador.get().getImoveis().stream().map(ImovelDTO::create).collect(Collectors.toList()));
+				.ok(imoveis.stream().map(ImovelDTO::create).collect(Collectors.toList()));
 	}
 
 	@PostMapping()

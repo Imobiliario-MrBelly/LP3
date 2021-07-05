@@ -3,7 +3,6 @@ package br.ifsudeste.mrbellyapi.service;
 import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
 import br.ifsudeste.mrbellyapi.model.entity.Locador;
 import br.ifsudeste.mrbellyapi.model.repository.LocadorRepository;
-import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -38,5 +37,6 @@ public class LocadorService {
 			throw new RegraDeNegocioException("Nome inválido");
 		}
 	}
+
 
 }
