@@ -5,10 +5,9 @@ import br.ifsudeste.mrbellyapi.model.entity.Contrato;
 import br.ifsudeste.mrbellyapi.model.repository.ContratoRepository;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
-
-import javax.transaction.Transactional;
 
 @Service
 public class ContratoService {
@@ -41,5 +40,13 @@ public class ContratoService {
         if (contrato.getImovel() == null) {
             throw new RegraDeNegocioException("Imovél inválido");
         }
+
+        if (contrato.getValor() == 0) {
+            throw new RegraDeNegocioException("Locatário inválido");
+        }
+        if (contrato.getDataFim().compareTo(contrato.getDataInicio()) <= 0) {
+            throw new RegraDeNegocioException("Data inválido");
+        }
+
     }
 }
