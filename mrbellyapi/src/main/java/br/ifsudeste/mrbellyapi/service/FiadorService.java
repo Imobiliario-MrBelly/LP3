@@ -33,9 +33,30 @@ public class FiadorService {
 	}
 
 	private void validar(Fiador fiador) {
-		if (fiador.getNome() == null || fiador.getNome().trim().equals("")) {
+		if (fiador.getNome()==null||fiador.getNome().trim().equals("")){
 			throw new RegraDeNegocioException("Nome inválido");
 		}
+
+		if (fiador.getCpf()==null||fiador.getCpf().trim().equals("")){
+			throw new RegraDeNegocioException("CPF inválido");
+		}
+
+		if (fiador.getRg()==null||fiador.getRg().trim().equals("")){
+			throw new RegraDeNegocioException("RG inválido");
+		}
+		if (fiador.getSexo()==null||fiador.getSexo().trim().equals("")){
+			throw new RegraDeNegocioException("Sexo inválido");
+		}
+		if (fiador.getDataNascimento()==null){
+			throw new RegraDeNegocioException("Data inválida");
+		}
+		if (fiador.getCpf()==null||fiador.getCpf().trim().equals("")){
+			throw new RegraDeNegocioException("CPF inválido");
+		}
+		if (fiador.getEndereco()==null){
+			throw new RegraDeNegocioException("Endereco inválido");
+		}
+
 	}
 
 }
