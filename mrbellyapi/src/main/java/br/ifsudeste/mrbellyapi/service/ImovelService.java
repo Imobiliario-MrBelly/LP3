@@ -45,5 +45,8 @@ public class ImovelService {
         if (imovel.getEndereco() == null) {
             throw new RegraDeNegocioException("Endereço inválido");
         }
+        if (imovel.getDescricao() == null) {
+            throw new RegraDeNegocioException("Descricao inválido");
+        }
     }
 }
