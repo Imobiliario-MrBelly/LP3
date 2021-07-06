@@ -33,9 +33,30 @@ public class LocadorService {
 	}
 
 	private void validar(Locador locador) {
-		if (locador.getNome() == null || locador.getNome().trim().equals("")) {
+		if (locador.getNome()==null||locador.getNome().trim().equals("")){
 			throw new RegraDeNegocioException("Nome inválido");
 		}
+
+		if (locador.getCpf()==null||locador.getCpf().trim().equals("")){
+			throw new RegraDeNegocioException("CPF inválido");
+		}
+
+		if (locador.getRg()==null||locador.getRg().trim().equals("")){
+			throw new RegraDeNegocioException("RG inválido");
+		}
+		if (locador.getSexo()==null||locador.getSexo().trim().equals("")){
+			throw new RegraDeNegocioException("Sexo inválido");
+		}
+		if (locador.getDataNascimento()==null){
+			throw new RegraDeNegocioException("Data inválida");
+		}
+		if (locador.getCpf()==null||locador.getCpf().trim().equals("")){
+			throw new RegraDeNegocioException("CPF inválido");
+		}
+		if (locador.getEndereco()==null){
+			throw new RegraDeNegocioException("Endereco inválido");
+		}
+
 	}
 
 
