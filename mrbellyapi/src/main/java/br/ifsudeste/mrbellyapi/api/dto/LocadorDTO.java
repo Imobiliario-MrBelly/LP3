@@ -1,16 +1,14 @@
 package br.ifsudeste.mrbellyapi.api.dto;
 
 import br.ifsudeste.mrbellyapi.model.entity.Locador;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDate;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -29,14 +27,28 @@ public class LocadorDTO {
 	private LocalDate dataNascimento;
 	
 	private String telefone;
-	private Long idLogin;
-	private Long idEndereco;
+
+	private String rua;
+	private String numero;
+	private String cep;
+	private String cidade;
+	private String uf;
+
+	private String email;
+	private String senha;
 
 	public static LocadorDTO create(Locador locador) {
 		ModelMapper modelMapper = new ModelMapper();
 		LocadorDTO dto = modelMapper.map(locador, LocadorDTO.class);
-		assert dto.getIdLogin().equals(locador.getLogin().getId());
-		assert dto.getIdEndereco().equals(locador.getEndereco().getId());
+		dto.cep=locador.getEndereco().getCep();
+		dto.cidade=locador.getEndereco().getCidade();
+		dto.numero=locador.getEndereco().getNumero();
+		dto.rua=locador.getEndereco().getRua();
+		dto.uf=locador.getEndereco().getUf();
+
+		dto.email=locador.getLogin().getEmail();
+		dto.senha=locador.getLogin().getSenha();
+
 		return dto;
 	}
 }

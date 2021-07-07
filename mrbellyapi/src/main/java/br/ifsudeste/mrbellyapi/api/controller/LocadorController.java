@@ -60,6 +60,10 @@ public class LocadorController {
 	public ResponseEntity post(LocadorDTO dto) {
 		try {
 			Locador locador = converter(dto);
+			Endereco endereco= enderecoService.salvar(locador.getEndereco());
+			Login login = loginService.salvar(locador.getLogin());
+			locador.setLogin(login);
+			locador.setEndereco(endereco);
 			locador = service.salvar(locador);
 			return new ResponseEntity(locador, HttpStatus.CREATED);
 		} catch (RegraDeNegocioException e) {
@@ -70,24 +74,10 @@ public class LocadorController {
 	public Locador converter(LocadorDTO dto) {
 		ModelMapper modelMapper = new ModelMapper();
 		Locador locador =  modelMapper.map(dto, Locador.class);
-		
-		if(dto.getIdEndereco() != null) {
-			Optional<Endereco> endereco = enderecoService.getEnderecoById(dto.getIdEndereco());
-			if(!endereco.isPresent()) {
-				locador.setEndereco(null);
-			}else {
-				locador.setEndereco(endereco.get());
-			}
-		}
-		
-		if(dto.getIdLogin() != null) {
-			Optional<Login> login = loginService.getLoginById(dto.getIdLogin());
-			if(!login.isPresent()) {
-				locador.setLogin(null);
-			}else {
-				locador.setLogin(login.get());
-			}
-		}
+		Login login = modelMapper.map(dto, Login.class);
+		Endereco endereco = modelMapper.map(dto,Endereco.class);
+		locador.setEndereco(endereco);
+		locador.setLogin(login);
         return locador;
 	}
 
