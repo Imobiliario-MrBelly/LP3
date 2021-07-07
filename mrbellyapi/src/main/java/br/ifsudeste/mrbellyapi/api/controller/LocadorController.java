@@ -81,4 +81,19 @@ public class LocadorController {
         return locador;
 	}
 
+	@PutMapping("{id}")
+	public ResponseEntity atualizar(@PathVariable("id") Long id, LocadorDTO dto){
+		if (!service.getLocadorById(id).isPresent()){
+			return new ResponseEntity("Locador nao encontrado", HttpStatus.NOT_FOUND);
+		}
+		try{
+			Locador locador=converter(dto);
+			Endereco endereco = locador.getEndereco();
+			enderecoService.salvar(endereco);
+			return new ResponseEntity(locador,HttpStatus.CREATED);
+		}catch (RegraDeNegocioException e ){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+
 }
