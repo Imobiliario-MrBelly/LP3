@@ -46,6 +46,7 @@ public class LocadorDTO {
 		dto.rua=locador.getEndereco().getRua();
 		dto.uf=locador.getEndereco().getUf();
 
+
 		dto.email=locador.getLogin().getEmail();
 		dto.senha=locador.getLogin().getSenha();
 

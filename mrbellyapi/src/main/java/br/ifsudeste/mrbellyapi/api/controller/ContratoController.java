@@ -3,26 +3,18 @@ package br.ifsudeste.mrbellyapi.api.controller;
 import br.ifsudeste.mrbellyapi.api.dto.ContratoDTO;
 import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
 import br.ifsudeste.mrbellyapi.model.entity.Contrato;
-import br.ifsudeste.mrbellyapi.model.entity.Endereco;
 import br.ifsudeste.mrbellyapi.model.entity.Fiador;
 import br.ifsudeste.mrbellyapi.model.entity.Imovel;
-import br.ifsudeste.mrbellyapi.model.entity.Locador;
 import br.ifsudeste.mrbellyapi.model.entity.Locatario;
 import br.ifsudeste.mrbellyapi.service.ContratoService;
 import br.ifsudeste.mrbellyapi.service.FiadorService;
 import br.ifsudeste.mrbellyapi.service.ImovelService;
-import br.ifsudeste.mrbellyapi.service.LocadorService;
 import br.ifsudeste.mrbellyapi.service.LocatarioService;
 import lombok.RequiredArgsConstructor;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -57,6 +49,8 @@ public class ContratoController {
 	public ResponseEntity post(ContratoDTO dto) {
 		try {
 			Contrato contrato = converter(dto);
+			Fiador fiador = fiadorService.salvar(contrato.getFiador());
+			contrato.setFiador(fiador);
 			contrato = service.salvar(contrato);
 			return new ResponseEntity(contrato, HttpStatus.CREATED);
 		} catch (RegraDeNegocioException e) {
@@ -87,14 +81,8 @@ public class ContratoController {
 			}
 		}
 
-		if (dto.getIdFiador() != null) {
-			Optional<Fiador> fiador = fiadorService.getFiadorById(dto.getIdFiador());
-			if (!fiador.isPresent()) {
-				contrato.setFiador(null);
-			} else {
-				contrato.setFiador(fiador.get());
-			}
-		}
+		Fiador fiador = modelMapper.map(dto, Fiador.class);
+		contrato.setFiador(fiador);
 		return contrato;
 	}
 }
