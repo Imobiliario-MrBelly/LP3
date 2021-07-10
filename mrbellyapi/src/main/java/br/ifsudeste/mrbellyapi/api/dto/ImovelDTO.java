@@ -18,13 +18,23 @@ public class ImovelDTO {
 	private double iptu;
 	private int garagem;
 	private Long idLocador;
-	private Long idEndereco;
+	
+	private String rua;
+	private String numero;
+	private String cep;
+	private String cidade;
+	private String uf;
 
 	public static ImovelDTO create(Imovel imovel) {
 		ModelMapper modelMapper = new ModelMapper();
 		ImovelDTO dto = modelMapper.map(imovel, ImovelDTO.class);
 		assert dto.getIdLocador().equals(imovel.getLocador().getId());
-		assert dto.getIdEndereco().equals(imovel.getEndereco().getId());
+		
+		dto.rua = imovel.getEndereco().getRua();
+		dto.numero = imovel.getEndereco().getNumero();
+		dto.cep = imovel.getEndereco().getCep();
+		dto.cidade = imovel.getEndereco().getCidade();
+		dto.uf = imovel.getEndereco().getUf();
 		return dto;
 	}
 }

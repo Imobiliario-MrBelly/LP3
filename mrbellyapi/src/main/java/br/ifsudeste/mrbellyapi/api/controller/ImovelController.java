@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -49,26 +50,36 @@ public class ImovelController {
 	public ResponseEntity post(ImovelDTO dto) {
 		try {
 			Imovel imovel = converter(dto);
+			Endereco endereco = enderecoService.salvar(imovel.getEndereco());
+			imovel.setEndereco(endereco);
 			imovel = service.salvar(imovel);
 			return new ResponseEntity(imovel, HttpStatus.CREATED);
 		} catch (RegraDeNegocioException e) {
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
 	}
-
+	
+	@PutMapping("{id}")
+	public ResponseEntity ataulizar(@PathVariable("id") Long id, ImovelDTO dto) {
+		if(!service.getImovelById(id).isPresent()) {
+			return new ResponseEntity("Imovel não encontrado", HttpStatus.NOT_FOUND);
+		}
+		
+		try {
+			Imovel imovel = converter(dto);
+			imovel.setId(id);
+			service.salvar(imovel);
+			return ResponseEntity.ok(imovel);
+		}catch(RegraDeNegocioException e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+	
 	public Imovel converter(ImovelDTO dto) {
 
 		ModelMapper modelMapper = new ModelMapper();
 		Imovel imovel = modelMapper.map(dto, Imovel.class);
 
-		if (dto.getIdEndereco() != null) {
-			Optional<Endereco> endereco = enderecoService.getEnderecoById(dto.getIdEndereco());
-			if (!endereco.isPresent()) {
-				imovel.setEndereco(null);
-			} else {
-				imovel.setEndereco(endereco.get());
-			}
-		}
 		if (dto.getIdLocador() != null) {
 			Optional<Locador> locador = locadorService.getLocadorById(dto.getIdLocador());
 			if (!locador.isPresent()) {
