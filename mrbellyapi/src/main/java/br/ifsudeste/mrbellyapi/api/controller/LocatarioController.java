@@ -7,15 +7,10 @@ import br.ifsudeste.mrbellyapi.model.entity.Login;
 import br.ifsudeste.mrbellyapi.service.LocatarioService;
 import br.ifsudeste.mrbellyapi.service.LoginService;
 import lombok.RequiredArgsConstructor;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -48,6 +43,8 @@ public class LocatarioController {
 	public ResponseEntity post(LocatarioDTO dto) {
 		try {
 			Locatario locatario = converter(dto);
+			Login login = loginService.salvar(locatario.getLogin());
+			locatario.setLogin(login);
 			locatario = service.salvar(locatario);
 			return new ResponseEntity(locatario, HttpStatus.CREATED);
 		} catch (RegraDeNegocioException e) {
@@ -58,15 +55,23 @@ public class LocatarioController {
 	public Locatario converter(LocatarioDTO dto) {
 		ModelMapper modelMapper = new ModelMapper();
 		Locatario locatario = modelMapper.map(dto, Locatario.class);
-
-		if (dto.getIdLogin() != null) {
-			Optional<Login> login = loginService.getLoginById(dto.getIdLogin());
-			if (!login.isPresent()) {
-				locatario.setLogin(null);
-			} else {
-				locatario.setLogin(login.get());
-			}
-		}
+		Login login = modelMapper.map(dto, Login.class);
+		locatario.setLogin(login);
 		return locatario;
+	}
+
+	@PutMapping("{id}")
+	public ResponseEntity atualizar(@PathVariable("id") Long id, LocatarioDTO dto){
+		if (!service.getLocatarioById(id).isPresent()){
+			return new ResponseEntity("locatario nao encontrado", HttpStatus.NOT_FOUND);
+		}
+		try{
+			Locatario locatario =converter(dto);
+			Login login = locatario.getLogin();
+			loginService.salvar(login);
+			return new ResponseEntity(locatario,HttpStatus.CREATED);
+		}catch (RegraDeNegocioException e ){
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 }
