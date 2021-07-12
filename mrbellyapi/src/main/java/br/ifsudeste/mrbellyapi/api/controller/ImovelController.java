@@ -9,16 +9,10 @@ import br.ifsudeste.mrbellyapi.service.EnderecoService;
 import br.ifsudeste.mrbellyapi.service.ImovelService;
 import br.ifsudeste.mrbellyapi.service.LocadorService;
 import lombok.RequiredArgsConstructor;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -78,15 +72,17 @@ public class ImovelController {
 	public Imovel converter(ImovelDTO dto) {
 
 		ModelMapper modelMapper = new ModelMapper();
-		Imovel imovel = modelMapper.map(dto, Imovel.class);
+		Imovel imovel =  modelMapper.map(dto, Imovel.class);
 
-		if (dto.getIdLocador() != null) {
-			Optional<Locador> locador = locadorService.getLocadorById(dto.getIdLocador());
-			if (!locador.isPresent()) {
-				imovel.setLocador(null);
-			} else {
-				imovel.setLocador(locador.get());
+		Endereco endereco = modelMapper.map(dto,Endereco.class);
+		imovel.setEndereco(endereco);
+		Locador locador = modelMapper.map(dto,Locador.class);
+		try{
+			if(!locadorService.getLocadorById(locador.getId()).isPresent()){
+				throw new Exception();
 			}
+		}catch (Exception e ){
+
 		}
 		return imovel;
 	}
