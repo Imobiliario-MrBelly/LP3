@@ -1,6 +1,7 @@
 package br.ifsudeste.mrbellyapi.service;
 
 import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
+import br.ifsudeste.mrbellyapi.model.entity.Endereco;
 import br.ifsudeste.mrbellyapi.model.entity.Fiador;
 import br.ifsudeste.mrbellyapi.model.repository.FiadorRepository;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -31,6 +33,12 @@ public class FiadorService {
 		validar(fiador);
 		return repository.save(fiador);
 	}
+	
+	@Transactional
+    public void excluir(Fiador fiador) {
+        Objects.requireNonNull(fiador.getId());
+        repository.delete(fiador);
+    }
 
 	private void validar(Fiador fiador) {
 		if (fiador.getNome()==null||fiador.getNome().trim().equals("")){

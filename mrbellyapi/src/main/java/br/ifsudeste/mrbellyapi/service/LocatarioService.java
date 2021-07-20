@@ -1,11 +1,13 @@
 package br.ifsudeste.mrbellyapi.service;
 
 import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
+import br.ifsudeste.mrbellyapi.model.entity.Locador;
 import br.ifsudeste.mrbellyapi.model.entity.Locatario;
 import br.ifsudeste.mrbellyapi.model.repository.LocatarioRepository;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -28,6 +30,12 @@ public class LocatarioService {
     public Locatario salvar(Locatario locatario) {
         validar(locatario);
         return repository.save(locatario);
+    }
+    
+    @Transactional
+    public void excluir(Locatario locatario) {
+        Objects.requireNonNull(locatario.getId());
+        repository.delete(locatario);
     }
 
     public void validar(Locatario locatario) {

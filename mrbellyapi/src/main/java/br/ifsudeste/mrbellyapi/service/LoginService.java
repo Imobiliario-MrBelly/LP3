@@ -1,12 +1,14 @@
 package br.ifsudeste.mrbellyapi.service;
 
 import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
+import br.ifsudeste.mrbellyapi.model.entity.Locatario;
 import br.ifsudeste.mrbellyapi.model.entity.Login;
 import br.ifsudeste.mrbellyapi.model.repository.LoginRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -30,6 +32,12 @@ public class LoginService {
 		validar(login);
 		return repository.save(login);
 	}
+	
+	@Transactional
+    public void excluir(Login login) {
+        Objects.requireNonNull(login.getId());
+        repository.delete(login);
+    }
 
 	private void validar(Login login) {
 		if (login.getEmail() == null || login.getEmail().trim().equals("")) {

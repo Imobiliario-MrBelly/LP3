@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -31,6 +32,12 @@ public class ContratoService {
         return repository.save(contrato);
     }
 
+    @Transactional
+    public void excluir(Contrato contrato) {
+        Objects.requireNonNull(contrato.getId());
+        repository.delete(contrato);
+    }
+    
     public void validar(Contrato contrato) {
 
         if (contrato.getLocatario() == null) {

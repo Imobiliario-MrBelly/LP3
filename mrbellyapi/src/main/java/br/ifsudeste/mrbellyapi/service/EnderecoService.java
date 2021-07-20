@@ -7,6 +7,7 @@ import br.ifsudeste.mrbellyapi.model.repository.EnderecoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -33,6 +34,12 @@ public class EnderecoService {
 		return repository.save(endereco);
 	}
 
+	@Transactional
+    public void excluir(Endereco endereco) {
+        Objects.requireNonNull(endereco.getId());
+        repository.delete(endereco);
+    }
+	
 	public void validar(Endereco endereco) {
 
 		if (endereco.getRua() == null || endereco.getRua().trim().equals("")) {
