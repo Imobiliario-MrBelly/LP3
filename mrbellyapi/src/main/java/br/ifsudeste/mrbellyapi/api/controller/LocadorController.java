@@ -52,15 +52,14 @@ public class LocadorController {
 			return new ResponseEntity("Locador não encontrado", HttpStatus.NOT_FOUND);
 		}
 		List<Imovel> imoveis = imovelService.getImovelByLocador(locador);
-		return ResponseEntity
-				.ok(imoveis.stream().map(ImovelDTO::create).collect(Collectors.toList()));
+		return ResponseEntity.ok(imoveis.stream().map(ImovelDTO::create).collect(Collectors.toList()));
 	}
 
 	@PostMapping()
 	public ResponseEntity post(LocadorDTO dto) {
 		try {
 			Locador locador = converter(dto);
-			Endereco endereco= enderecoService.salvar(locador.getEndereco());
+			Endereco endereco = enderecoService.salvar(locador.getEndereco());
 			Login login = loginService.salvar(locador.getLogin());
 			locador.setLogin(login);
 			locador.setEndereco(endereco);
@@ -71,31 +70,45 @@ public class LocadorController {
 		}
 	}
 
-	public Locador converter(LocadorDTO dto) {
-		ModelMapper modelMapper = new ModelMapper();
-		Locador locador =  modelMapper.map(dto, Locador.class);
-		Login login = modelMapper.map(dto, Login.class);
-		Endereco endereco = modelMapper.map(dto,Endereco.class);
-		locador.setEndereco(endereco);
-		locador.setLogin(login);
-        return locador;
-	}
-
 	@PutMapping("{id}")
-	public ResponseEntity atualizar(@PathVariable("id") Long id, LocadorDTO dto){
-		if (!service.getLocadorById(id).isPresent()){
+	public ResponseEntity atualizar(@PathVariable("id") Long id, LocadorDTO dto) {
+		if (!service.getLocadorById(id).isPresent()) {
 			return new ResponseEntity("Locador nao encontrado", HttpStatus.NOT_FOUND);
 		}
-		try{
-			Locador locador=converter(dto);
+		try {
+			Locador locador = converter(dto);
 			Endereco endereco = locador.getEndereco();
 			Login login = locador.getLogin();
 			enderecoService.salvar(endereco);
 			loginService.salvar(login);
-			return new ResponseEntity(locador,HttpStatus.CREATED);
-		}catch (RegraDeNegocioException e ){
+			return new ResponseEntity(locador, HttpStatus.CREATED);
+		} catch (RegraDeNegocioException e) {
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
+	}
+
+	@DeleteMapping("{id}")
+	public ResponseEntity excluir(@PathVariable("id") Long id) {
+		Optional<Locador> locador = service.getLocadorById(id);
+		if (!locador.isPresent()) {
+			return new ResponseEntity("Locador não encontrado", HttpStatus.NOT_FOUND);
+		}
+		try {
+			service.excluir(locador.get());
+			return new ResponseEntity(HttpStatus.NO_CONTENT);
+		} catch (RegraDeNegocioException e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+
+	public Locador converter(LocadorDTO dto) {
+		ModelMapper modelMapper = new ModelMapper();
+		Locador locador = modelMapper.map(dto, Locador.class);
+		Login login = modelMapper.map(dto, Login.class);
+		Endereco endereco = modelMapper.map(dto, Endereco.class);
+		locador.setEndereco(endereco);
+		locador.setLogin(login);
+		return locador;
 	}
 
 }

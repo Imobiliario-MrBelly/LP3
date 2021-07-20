@@ -46,6 +46,20 @@ public class FiadorController {
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
 	}
+	
+	@DeleteMapping("{id}")
+    public ResponseEntity excluir(@PathVariable("id") Long id) {
+        Optional<Fiador> fiador = service.getFiadorById(id);
+        if (!fiador.isPresent()) {
+            return new ResponseEntity("Fiador não encontrado", HttpStatus.NOT_FOUND);
+        }
+        try {
+            service.excluir(fiador.get());
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        } catch (RegraDeNegocioException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 
 	public Fiador converter(FiadorDTO dto) {
 		ModelMapper modelMapper = new ModelMapper();

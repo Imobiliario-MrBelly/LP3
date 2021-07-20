@@ -1,9 +1,7 @@
 package br.ifsudeste.mrbellyapi.api.controller;
 
 import br.ifsudeste.mrbellyapi.api.dto.EnderecoDTO;
-import br.ifsudeste.mrbellyapi.api.dto.EnderecoDTO;
 import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
-import br.ifsudeste.mrbellyapi.model.entity.Endereco;
 import br.ifsudeste.mrbellyapi.model.entity.Endereco;
 import br.ifsudeste.mrbellyapi.service.EnderecoService;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,6 +50,20 @@ public class EnderecoController {
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
 	}
+	
+	@DeleteMapping("{id}")
+    public ResponseEntity excluir(@PathVariable("id") Long id) {
+        Optional<Endereco> endereco = service.getEnderecoById(id);
+        if (!endereco.isPresent()) {
+            return new ResponseEntity("Endereço não encontrado", HttpStatus.NOT_FOUND);
+        }
+        try {
+            service.excluir(endereco.get());
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        } catch (RegraDeNegocioException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 
 	public Endereco converter(EnderecoDTO dto) {
 		ModelMapper modelMapper = new ModelMapper();

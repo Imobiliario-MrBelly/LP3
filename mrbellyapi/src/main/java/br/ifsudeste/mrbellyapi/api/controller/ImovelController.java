@@ -69,6 +69,20 @@ public class ImovelController {
 		}
 	}
 	
+	@DeleteMapping("{id}")
+    public ResponseEntity excluir(@PathVariable("id") Long id) {
+        Optional<Imovel> imovel = service.getImovelById(id);
+        if (!imovel.isPresent()) {
+            return new ResponseEntity("Imóvel não encontrado", HttpStatus.NOT_FOUND);
+        }
+        try {
+            service.excluir(imovel.get());
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        } catch (RegraDeNegocioException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+	
 	public Imovel converter(ImovelDTO dto) {
 
 		ModelMapper modelMapper = new ModelMapper();

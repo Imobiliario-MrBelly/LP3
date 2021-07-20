@@ -52,26 +52,40 @@ public class LocatarioController {
 		}
 	}
 
+	@PutMapping("{id}")
+	public ResponseEntity atualizar(@PathVariable("id") Long id, LocatarioDTO dto) {
+		if (!service.getLocatarioById(id).isPresent()) {
+			return new ResponseEntity("locatario nao encontrado", HttpStatus.NOT_FOUND);
+		}
+		try {
+			Locatario locatario = converter(dto);
+			Login login = locatario.getLogin();
+			loginService.salvar(login);
+			return new ResponseEntity(locatario, HttpStatus.CREATED);
+		} catch (RegraDeNegocioException e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+
+	@DeleteMapping("{id}")
+	public ResponseEntity excluir(@PathVariable("id") Long id) {
+		Optional<Locatario> locatario = service.getLocatarioById(id);
+		if (!locatario.isPresent()) {
+			return new ResponseEntity("Locatário não encontrado", HttpStatus.NOT_FOUND);
+		}
+		try {
+			service.excluir(locatario.get());
+			return new ResponseEntity(HttpStatus.NO_CONTENT);
+		} catch (RegraDeNegocioException e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+
 	public Locatario converter(LocatarioDTO dto) {
 		ModelMapper modelMapper = new ModelMapper();
 		Locatario locatario = modelMapper.map(dto, Locatario.class);
 		Login login = modelMapper.map(dto, Login.class);
 		locatario.setLogin(login);
 		return locatario;
-	}
-
-	@PutMapping("{id}")
-	public ResponseEntity atualizar(@PathVariable("id") Long id, LocatarioDTO dto){
-		if (!service.getLocatarioById(id).isPresent()){
-			return new ResponseEntity("locatario nao encontrado", HttpStatus.NOT_FOUND);
-		}
-		try{
-			Locatario locatario =converter(dto);
-			Login login = locatario.getLogin();
-			loginService.salvar(login);
-			return new ResponseEntity(locatario,HttpStatus.CREATED);
-		}catch (RegraDeNegocioException e ){
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
 	}
 }
