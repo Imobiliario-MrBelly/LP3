@@ -16,7 +16,7 @@ public class Locador extends Pessoa {
 	@OneToOne
 	private Login login;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Endereco endereco;
 
 	@OneToMany

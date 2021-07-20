@@ -3,6 +3,8 @@ package br.ifsudeste.mrbellyapi.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
@@ -11,6 +13,6 @@ import javax.persistence.OneToOne;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Fiador extends Pessoa{
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 }

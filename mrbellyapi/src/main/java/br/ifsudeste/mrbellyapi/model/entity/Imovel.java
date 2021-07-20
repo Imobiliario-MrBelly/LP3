@@ -23,6 +23,6 @@ public class Imovel {
     private int garagem;
     @ManyToOne
     private Locador locador;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 }
