@@ -1,7 +1,6 @@
 package br.ifsudeste.mrbellyapi.service;
 
 import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
-import br.ifsudeste.mrbellyapi.model.entity.Imovel;
 import br.ifsudeste.mrbellyapi.model.entity.Locador;
 import br.ifsudeste.mrbellyapi.model.repository.LocadorRepository;
 import org.springframework.stereotype.Service;
@@ -57,9 +56,6 @@ public class LocadorService {
 		}
 		if (locador.getDataNascimento()==null){
 			throw new RegraDeNegocioException("Data inválida");
-		}
-		if (locador.getCpf()==null||locador.getCpf().trim().equals("")){
-			throw new RegraDeNegocioException("CPF inválido");
 		}
 		if (locador.getEndereco()==null){
 			throw new RegraDeNegocioException("Endereco inválido");

@@ -6,35 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="e4ff03f1-4bd0-4af5-b023-9aeaf2572217" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/api/controller/ImovelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/src/main/java/br/ifsudeste/mrbellyapi/api/controller/ImovelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/MrbellyapiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/MrbellyapiApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/IndexResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/IndexResource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/ContratoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/ContratoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/EnderecoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/EnderecoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/ImovelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/ImovelController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/LocadorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/LocadorController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/LocatarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/controller/LocatarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/ContratoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/ContratoDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/EnderecoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/EnderecoDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/LocadorDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/LocadorDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/LocatarioDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/api/dto/LocatarioDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Contrato.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Contrato.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Endereco.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Endereco.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Fiador.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Fiador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Locador.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Locador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Locatario.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Locatario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Pessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/entity/Pessoa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/ContratoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/ContratoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/EnderecoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/EnderecoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/ImovelRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/ImovelRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/LocatarioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/model/repository/LocatarioRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/ContratoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/ContratoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/EnderecoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/EnderecoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/ImovelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/ImovelService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/LocadorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/LocadorService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/LocatarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/classes/br/ifsudeste/mrbellyapi/service/LocatarioService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mrbellyapi/target/test-classes/br/ifsudeste/mrbellyapi/MrbellyapiApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/mrbellyapi/target/test-classes/br/ifsudeste/mrbellyapi/MrbellyapiApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,17 +90,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.MrbellyapiApplication (1)">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MrbellyapiApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mrbellyapi" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.ifsudeste.mrbellyapi.MrbellyapiApplication" />
@@ -169,6 +144,10 @@
       <workItem from="1625617314714" duration="4952000" />
       <workItem from="1625873131556" duration="3554000" />
       <workItem from="1626096723736" duration="3652000" />
+      <workItem from="1626173524328" duration="1825000" />
+      <workItem from="1626349234835" duration="925000" />
+      <workItem from="1626816042681" duration="6359000" />
+      <workItem from="1626987223135" duration="6015000" />
     </task>
     <servers />
   </component>
