@@ -103,11 +103,14 @@ public class LocadorController {
 
 	public Locador converter(LocadorDTO dto) {
 		ModelMapper modelMapper = new ModelMapper();
+		
 		Locador locador = modelMapper.map(dto, Locador.class);
 		Login login = modelMapper.map(dto, Login.class);
 		Endereco endereco = modelMapper.map(dto, Endereco.class);
+		
 		locador.setEndereco(endereco);
 		locador.setLogin(login);
+		
 		return locador;
 	}
 

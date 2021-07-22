@@ -63,16 +63,11 @@ public class FiadorController {
 
 	public Fiador converter(FiadorDTO dto) {
 		ModelMapper modelMapper = new ModelMapper();
+		
 		Fiador fiador = modelMapper.map(dto, Fiador.class);
-
-		if (dto.getIdEndereco() != null) {
-			Optional<Endereco> endereco = enderecoService.getEnderecoById(dto.getIdEndereco());
-			if (!endereco.isPresent()) {
-				fiador.setEndereco(null);
-			} else {
-				fiador.setEndereco(endereco.get());
-			}
-		}
+		Endereco endereco = modelMapper.map(dto, Endereco.class);
+	
+		fiador.setEndereco(endereco);
 
 		return fiador;
 	}
