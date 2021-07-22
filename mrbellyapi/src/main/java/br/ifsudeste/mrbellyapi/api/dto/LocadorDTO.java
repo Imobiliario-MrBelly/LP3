@@ -21,15 +21,16 @@ public class LocadorDTO {
 	private String rg;
 	private String cpf;
 	private char sexo;
-	
+
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataNascimento;
-	
+
 	private String telefone;
 
 	private String rua;
 	private String numero;
+	private String bairro;
 	private String cep;
 	private String cidade;
 	private String uf;
@@ -40,15 +41,16 @@ public class LocadorDTO {
 	public static LocadorDTO create(Locador locador) {
 		ModelMapper modelMapper = new ModelMapper();
 		LocadorDTO dto = modelMapper.map(locador, LocadorDTO.class);
-		dto.cep=locador.getEndereco().getCep();
-		dto.cidade=locador.getEndereco().getCidade();
-		dto.numero=locador.getEndereco().getNumero();
-		dto.rua=locador.getEndereco().getRua();
-		dto.uf=locador.getEndereco().getUf();
 
+		dto.rua = locador.getEndereco().getRua();
+		dto.numero = locador.getEndereco().getNumero();
+		dto.bairro = locador.getEndereco().getBairro();
+		dto.cep = locador.getEndereco().getCep();
+		dto.cidade = locador.getEndereco().getCidade();
+		dto.uf = locador.getEndereco().getUf();
 
-		dto.email=locador.getLogin().getEmail();
-		dto.senha=locador.getLogin().getSenha();
+		dto.email = locador.getLogin().getEmail();
+		dto.senha = locador.getLogin().getSenha();
 
 		return dto;
 	}

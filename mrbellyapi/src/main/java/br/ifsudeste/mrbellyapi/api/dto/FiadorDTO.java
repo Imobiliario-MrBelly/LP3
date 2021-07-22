@@ -29,12 +29,25 @@ public class FiadorDTO {
 	private LocalDate dataNascimento;
 
 	private String telefone;
-	private Long idEndereco;
+
+	private String rua;
+	private String numero;
+	private String bairro;
+	private String cep;
+	private String cidade;
+	private String uf;
 
 	public static FiadorDTO create(Fiador fiador) {
 		ModelMapper modelMapper = new ModelMapper();
 		FiadorDTO dto = modelMapper.map(fiador, FiadorDTO.class);
-		assert dto.getIdEndereco().equals(fiador.getEndereco().getId());
+
+		dto.rua = fiador.getEndereco().getRua();
+		dto.numero = fiador.getEndereco().getNumero();
+		dto.bairro = fiador.getEndereco().getBairro();
+		dto.cep = fiador.getEndereco().getCep();
+		dto.cidade = fiador.getEndereco().getCidade();
+		dto.uf = fiador.getEndereco().getUf();
+
 		return dto;
 	}
 }
