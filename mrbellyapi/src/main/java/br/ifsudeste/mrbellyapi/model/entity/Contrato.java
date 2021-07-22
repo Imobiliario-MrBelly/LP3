@@ -25,7 +25,7 @@ public class Contrato {
 	@OneToOne
 	private Locatario locatario;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Fiador fiador;
 	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
