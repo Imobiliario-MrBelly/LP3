@@ -49,8 +49,6 @@ public class ContratoController {
 	public ResponseEntity post(ContratoDTO dto) {
 		try {
 			Contrato contrato = converter(dto);
-			Fiador fiador = fiadorService.salvar(contrato.getFiador());
-			contrato.setFiador(fiador);
 			contrato = service.salvar(contrato);
 			return new ResponseEntity(contrato, HttpStatus.CREATED);
 		} catch (RegraDeNegocioException e) {
