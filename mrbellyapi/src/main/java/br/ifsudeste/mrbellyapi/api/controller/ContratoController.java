@@ -59,20 +59,21 @@ public class ContratoController {
 	}
 
 	@DeleteMapping("{id}")
-    public ResponseEntity excluir(@PathVariable("id") Long id) {
-        Optional<Contrato> contrato = service.getContratoById(id);
-        if (!contrato.isPresent()) {
-            return new ResponseEntity("Contrato não encontrado", HttpStatus.NOT_FOUND);
-        }
-        try {
-            service.excluir(contrato.get());
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
-        } catch (RegraDeNegocioException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
-    }
+	public ResponseEntity excluir(@PathVariable("id") Long id) {
+		Optional<Contrato> contrato = service.getContratoById(id);
+		if (!contrato.isPresent()) {
+			return new ResponseEntity("Contrato não encontrado", HttpStatus.NOT_FOUND);
+		}
+		try {
+			service.excluir(contrato.get());
+			return new ResponseEntity(HttpStatus.NO_CONTENT);
+		} catch (RegraDeNegocioException e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+
 	public Contrato converter(ContratoDTO dto) {
-		
+
 		ModelMapper modelMapper = new ModelMapper();
 		Contrato contrato = modelMapper.map(dto, Contrato.class);
 
@@ -94,8 +95,14 @@ public class ContratoController {
 			}
 		}
 
-		Fiador fiador = modelMapper.map(dto, Fiador.class);
-		contrato.setFiador(fiador);
+		if (dto.getIdFiador() != null) {
+			Optional<Fiador> fiador = fiadorService.getFiadorById(dto.getIdFiador());
+			if (!fiador.isPresent()) {
+				contrato.setFiador(null);
+			} else {
+				contrato.setFiador(fiador.get());
+			}
+		}
 		return contrato;
 	}
 }
