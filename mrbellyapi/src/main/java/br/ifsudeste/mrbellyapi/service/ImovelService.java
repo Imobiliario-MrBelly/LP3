@@ -47,14 +47,14 @@ public class ImovelService {
     public void validar(Imovel imovel) {
 
         if (imovel.getLocador() == null) {
-            throw new RegraDeNegocioException("Locador inválido");
+            throw new RegraDeNegocioException("Locador não inserido");
         }
         
         if (imovel.getEndereco() == null) {
-            throw new RegraDeNegocioException("Endereço inválido");
+            throw new RegraDeNegocioException("Endereço não inserido");
         }
         if (imovel.getDescricao() == null) {
-            throw new RegraDeNegocioException("Descricao inválido");
+            throw new RegraDeNegocioException("Descricão não inserida");
         }
     }
 }

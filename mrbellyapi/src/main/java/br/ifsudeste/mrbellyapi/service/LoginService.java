@@ -41,10 +41,10 @@ public class LoginService {
 
 	private void validar(Login login) {
 		if (login.getEmail() == null || login.getEmail().trim().equals("")) {
-			throw new RegraDeNegocioException("E-mail inválido");
+			throw new RegraDeNegocioException("E-mail não inserido");
 		}
 		if (login.getSenha() == null || login.getSenha().trim().equals("")) {
-			throw new RegraDeNegocioException("Senha inválido");
+			throw new RegraDeNegocioException("Senha não inserida");
 		}
 	}
 
