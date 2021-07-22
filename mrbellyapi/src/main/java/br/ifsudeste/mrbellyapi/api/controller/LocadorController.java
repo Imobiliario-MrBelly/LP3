@@ -73,7 +73,7 @@ public class LocadorController {
 	@PutMapping("{id}")
 	public ResponseEntity atualizar(@PathVariable("id") Long id, LocadorDTO dto) {
 		if (!service.getLocadorById(id).isPresent()) {
-			return new ResponseEntity("Locador nao encontrado", HttpStatus.NOT_FOUND);
+			return new ResponseEntity("Locador nãoo encontrado", HttpStatus.NOT_FOUND);
 		}
 		try {
 			Locador locador = converter(dto);
@@ -103,14 +103,14 @@ public class LocadorController {
 
 	public Locador converter(LocadorDTO dto) {
 		ModelMapper modelMapper = new ModelMapper();
-		
+
 		Locador locador = modelMapper.map(dto, Locador.class);
 		Login login = modelMapper.map(dto, Login.class);
 		Endereco endereco = modelMapper.map(dto, Endereco.class);
-		
+
 		locador.setEndereco(endereco);
 		locador.setLogin(login);
-		
+
 		return locador;
 	}
 

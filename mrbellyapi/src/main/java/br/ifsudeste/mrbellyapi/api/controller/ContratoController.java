@@ -40,7 +40,7 @@ public class ContratoController {
 	public ResponseEntity get(@PathVariable("id") Long id) {
 		Optional<Contrato> contrato = service.getContratoById(id);
 		if (!contrato.isPresent()) {
-			return new ResponseEntity("Contrato nao encontrado", HttpStatus.NOT_FOUND);
+			return new ResponseEntity("Contrato não encontrado", HttpStatus.NOT_FOUND);
 		}
 		return ResponseEntity.ok(contrato.map(ContratoDTO::create));
 	}

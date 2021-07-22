@@ -35,7 +35,7 @@ public class ImovelController {
 	public ResponseEntity get(@PathVariable("id") Long id) {
 		Optional<Imovel> imovel = service.getImovelById(id);
 		if (!imovel.isPresent()) {
-			return new ResponseEntity("Imovel nao localizado", HttpStatus.NOT_FOUND);
+			return new ResponseEntity("Imóvel não encontrado", HttpStatus.NOT_FOUND);
 		}
 		return ResponseEntity.ok(imovel.map(ImovelDTO::create));
 	}
@@ -56,7 +56,7 @@ public class ImovelController {
 	@PutMapping("{id}")
 	public ResponseEntity ataulizar(@PathVariable("id") Long id, ImovelDTO dto) {
 		if(!service.getImovelById(id).isPresent()) {
-			return new ResponseEntity("Imovel não encontrado", HttpStatus.NOT_FOUND);
+			return new ResponseEntity("Imóvel não encontrado", HttpStatus.NOT_FOUND);
 		}
 		
 		try {

@@ -36,20 +36,9 @@ public class LoginController {
 	public ResponseEntity get(@PathVariable("id") Long id) {
 		Optional<Login> login = service.getLoginById(id);
 		if (!login.isPresent()) {
-			return new ResponseEntity("Login nao encontrado", HttpStatus.NOT_FOUND);
+			return new ResponseEntity("Login não encontrado", HttpStatus.NOT_FOUND);
 		}
 		return ResponseEntity.ok(login.map(LoginDTO::create));
-	}
-
-	@PostMapping()
-	public ResponseEntity post(LoginDTO dto) {
-		try {
-			Login login = converter(dto);
-			login = service.salvar(login);
-			return new ResponseEntity(login, HttpStatus.CREATED);
-		} catch (RegraDeNegocioException e) {
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
 	}
 
 	public Login converter(LoginDTO dto) {

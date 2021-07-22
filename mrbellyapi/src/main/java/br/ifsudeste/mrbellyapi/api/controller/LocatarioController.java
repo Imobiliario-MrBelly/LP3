@@ -55,7 +55,7 @@ public class LocatarioController {
 	@PutMapping("{id}")
 	public ResponseEntity atualizar(@PathVariable("id") Long id, LocatarioDTO dto) {
 		if (!service.getLocatarioById(id).isPresent()) {
-			return new ResponseEntity("locatario nao encontrado", HttpStatus.NOT_FOUND);
+			return new ResponseEntity("Locatário não encontrado", HttpStatus.NOT_FOUND);
 		}
 		try {
 			Locatario locatario = converter(dto);

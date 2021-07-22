@@ -35,7 +35,7 @@ public class EnderecoController {
 	public ResponseEntity get(@PathVariable("id") Long id) {
 		Optional<Endereco> endereco = service.getEnderecoById(id);
 		if (!endereco.isPresent()) {
-			return new ResponseEntity("endereco nao encontrado", HttpStatus.NOT_FOUND);
+			return new ResponseEntity("Endereço não encontrado", HttpStatus.NOT_FOUND);
 		}
 		return ResponseEntity.ok(endereco.map(EnderecoDTO::create));
 	}

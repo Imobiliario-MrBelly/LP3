@@ -31,7 +31,7 @@ public class FiadorController {
 	public ResponseEntity get(@PathVariable("id") Long id) {
 		Optional<Fiador> fiador = service.getFiadorById(id);
 		if (!fiador.isPresent()) {
-			return new ResponseEntity("Fiador nao encontrado", HttpStatus.NOT_FOUND);
+			return new ResponseEntity("Fiador não encontrado", HttpStatus.NOT_FOUND);
 		}
 		return ResponseEntity.ok(fiador.map(FiadorDTO::create));
 	}
@@ -46,27 +46,43 @@ public class FiadorController {
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
 	}
-	
+
+	@PutMapping("{id}")
+	public ResponseEntity ataulizar(@PathVariable("id") Long id, FiadorDTO dto) {
+		if (!service.getFiadorById(id).isPresent()) {
+			return new ResponseEntity("Fiador não encontrado", HttpStatus.NOT_FOUND);
+		}
+
+		try {
+			Fiador fiador = converter(dto);
+			fiador.setId(id);
+			service.salvar(fiador);
+			return ResponseEntity.ok(fiador);
+		} catch (RegraDeNegocioException e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+
 	@DeleteMapping("{id}")
-    public ResponseEntity excluir(@PathVariable("id") Long id) {
-        Optional<Fiador> fiador = service.getFiadorById(id);
-        if (!fiador.isPresent()) {
-            return new ResponseEntity("Fiador não encontrado", HttpStatus.NOT_FOUND);
-        }
-        try {
-            service.excluir(fiador.get());
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
-        } catch (RegraDeNegocioException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
-    }
+	public ResponseEntity excluir(@PathVariable("id") Long id) {
+		Optional<Fiador> fiador = service.getFiadorById(id);
+		if (!fiador.isPresent()) {
+			return new ResponseEntity("Fiador não encontrado", HttpStatus.NOT_FOUND);
+		}
+		try {
+			service.excluir(fiador.get());
+			return new ResponseEntity(HttpStatus.NO_CONTENT);
+		} catch (RegraDeNegocioException e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
 
 	public Fiador converter(FiadorDTO dto) {
 		ModelMapper modelMapper = new ModelMapper();
-		
+
 		Fiador fiador = modelMapper.map(dto, Fiador.class);
 		Endereco endereco = modelMapper.map(dto, Endereco.class);
-	
+
 		fiador.setEndereco(endereco);
 
 		return fiador;
