@@ -12,48 +12,54 @@ import java.util.Optional;
 
 @Service
 public class ContratoService {
-    private ContratoRepository repository;
+	private ContratoRepository repository;
 
-    public ContratoService(ContratoRepository repository){
-        this.repository = repository;
-    }
+	public ContratoService(ContratoRepository repository) {
+		this.repository = repository;
+	}
 
-    public List<Contrato> getContratos(){
-         return repository.findAll();
-    }
+	public List<Contrato> getContratos() {
+		return repository.findAll();
+	}
 
-    public Optional<Contrato> getContratoById(Long id){
-        return repository.findById(id);
-    }
-    
-    @Transactional
-    public Contrato salvar(Contrato contrato) {
-        validar(contrato);
-        return repository.save(contrato);
-    }
+	public Optional<Contrato> getContratoById(Long id) {
+		return repository.findById(id);
+	}
 
-    @Transactional
-    public void excluir(Contrato contrato) {
-        Objects.requireNonNull(contrato.getId());
-        repository.delete(contrato);
-    }
-    
-    public void validar(Contrato contrato) {
+	@Transactional
+	public Contrato salvar(Contrato contrato) {
+		validar(contrato);
+		return repository.save(contrato);
+	}
 
-        if (contrato.getLocatario() == null) {
-            throw new RegraDeNegocioException("Locatário inválido");
-        }
-        
-        if (contrato.getImovel() == null) {
-            throw new RegraDeNegocioException("Imovél inválido");
-        }
+	@Transactional
+	public void excluir(Contrato contrato) {
+		Objects.requireNonNull(contrato.getId());
+		repository.delete(contrato);
+	}
 
-        if (contrato.getValor() == 0) {
-            throw new RegraDeNegocioException("Locatário inválido");
-        }
-        if (contrato.getDataFim().compareTo(contrato.getDataInicio()) <= 0) {
-            throw new RegraDeNegocioException("Data inválido");
-        }
+	public void validar(Contrato contrato) {
 
-    }
+		if (contrato.getLocatario() == null) {
+			throw new RegraDeNegocioException("Locatário não inserido");
+		}
+
+		if (contrato.getImovel() == null) {
+			throw new RegraDeNegocioException("Imovél não inserido");
+		}
+
+		if (contrato.getValor() == 0) {
+			throw new RegraDeNegocioException("Valor não inserido");
+		}
+		
+		if (contrato.getDataInicio() != null && contrato.getDataFim() != null) {
+			
+			if (contrato.getDataFim().compareTo(contrato.getDataInicio()) <= 0) {
+				throw new RegraDeNegocioException("Data inválida");
+			}
+		} else {
+			throw new RegraDeNegocioException("Data não inserida");
+		}
+
+	}
 }
