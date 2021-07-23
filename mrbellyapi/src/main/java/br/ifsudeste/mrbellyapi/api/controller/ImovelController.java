@@ -3,6 +3,7 @@ package br.ifsudeste.mrbellyapi.api.controller;
 import br.ifsudeste.mrbellyapi.api.dto.ImovelDTO;
 import br.ifsudeste.mrbellyapi.api.exception.RegraDeNegocioException;
 import br.ifsudeste.mrbellyapi.model.entity.Endereco;
+import br.ifsudeste.mrbellyapi.model.entity.Fiador;
 import br.ifsudeste.mrbellyapi.model.entity.Imovel;
 import br.ifsudeste.mrbellyapi.model.entity.Locador;
 import br.ifsudeste.mrbellyapi.service.EnderecoService;
@@ -52,51 +53,52 @@ public class ImovelController {
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
 	}
-	
+
 	@PutMapping("{id}")
 	public ResponseEntity ataulizar(@PathVariable("id") Long id, ImovelDTO dto) {
-		if(!service.getImovelById(id).isPresent()) {
+		if (!service.getImovelById(id).isPresent()) {
 			return new ResponseEntity("Imóvel não encontrado", HttpStatus.NOT_FOUND);
 		}
-		
+
 		try {
 			Imovel imovel = converter(dto);
 			imovel.setId(id);
 			service.salvar(imovel);
 			return ResponseEntity.ok(imovel);
-		}catch(RegraDeNegocioException e) {
+		} catch (RegraDeNegocioException e) {
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
 	}
-	
+
 	@DeleteMapping("{id}")
-    public ResponseEntity excluir(@PathVariable("id") Long id) {
-        Optional<Imovel> imovel = service.getImovelById(id);
-        if (!imovel.isPresent()) {
-            return new ResponseEntity("Imóvel não encontrado", HttpStatus.NOT_FOUND);
-        }
-        try {
-            service.excluir(imovel.get());
-            return new ResponseEntity(HttpStatus.NO_CONTENT);
-        } catch (RegraDeNegocioException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
-    }
-	
+	public ResponseEntity excluir(@PathVariable("id") Long id) {
+		Optional<Imovel> imovel = service.getImovelById(id);
+		if (!imovel.isPresent()) {
+			return new ResponseEntity("Imóvel não encontrado", HttpStatus.NOT_FOUND);
+		}
+		try {
+			service.excluir(imovel.get());
+			return new ResponseEntity(HttpStatus.NO_CONTENT);
+		} catch (RegraDeNegocioException e) {
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+
 	public Imovel converter(ImovelDTO dto) {
 
 		ModelMapper modelMapper = new ModelMapper();
-		Imovel imovel =  modelMapper.map(dto, Imovel.class);
+		Imovel imovel = modelMapper.map(dto, Imovel.class);
 
-		Endereco endereco = modelMapper.map(dto,Endereco.class);
+		Endereco endereco = modelMapper.map(dto, Endereco.class);
 		imovel.setEndereco(endereco);
-		Locador locador = modelMapper.map(dto,Locador.class);
-		try{
-			if(!locadorService.getLocadorById(locador.getId()).isPresent()){
-				throw new Exception();
-			}
-		}catch (Exception e ){
 
+		if (dto.getIdLocador() != null) {
+			Optional<Locador> locador = locadorService.getLocadorById(dto.getIdLocador());
+			if (!locador.isPresent()) {
+				imovel.setLocador(null);
+			} else {
+				imovel.setLocador(locador.get());
+			}
 		}
 		return imovel;
 	}
