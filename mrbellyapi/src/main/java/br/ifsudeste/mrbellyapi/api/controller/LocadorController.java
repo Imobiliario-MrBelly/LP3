@@ -81,6 +81,7 @@ public class LocadorController {
 			Login login = locador.getLogin();
 			enderecoService.salvar(endereco);
 			loginService.salvar(login);
+			service.salvar(locador);
 			return new ResponseEntity(locador, HttpStatus.CREATED);
 		} catch (RegraDeNegocioException e) {
 			return ResponseEntity.badRequest().body(e.getMessage());

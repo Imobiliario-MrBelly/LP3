@@ -61,6 +61,7 @@ public class LocatarioController {
 			Locatario locatario = converter(dto);
 			Login login = locatario.getLogin();
 			loginService.salvar(login);
+			service.salvar(locatario);
 			return new ResponseEntity(locatario, HttpStatus.CREATED);
 		} catch (RegraDeNegocioException e) {
 			return ResponseEntity.badRequest().body(e.getMessage());
